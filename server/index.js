@@ -16,8 +16,7 @@ passport.use(new GoogleStrategy({
 accessToken => {
     console.log(accessToken)
 }));
-// Client ID 85941131422-c7vm8p4f4q94edn7qpahdhutj3m5eaq5.apps.googleusercontent.com
-// secret p9IszkbphBxVNKnabV4ZtJx3
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => `Server running on port ${port} 🔥`);
