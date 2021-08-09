@@ -9,14 +9,23 @@ const app = express();
 //     res.send({hi: 'its rainy !!!'})
 // })
 passport.use(new GoogleStrategy({
-    clientID : keys.clientID,
-    clientSecret : keys.clientSecret,
+    clientID : keys.googleClientID,
+    clientSecret : keys.googleSecret,
     callbackURL: '/auth/google/callback'
 },
 accessToken => {
     console.log(accessToken)
 }));
 
+app.get('/auth/google',
+        passport.authenticate('google',{
+            scope: ['profile','email']
+        })        
+)
+
+app.get('/auth/google/callback',
+        passport.authenticate('google')
+)
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => `Server running on port ${port} 🔥`);
