@@ -1,8 +1,16 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const keys = require('./config/keys')
 require('./services/passport');
 
-const app = express();
+mongoose.connect(keys.mongoURI,{
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+});
 
+const app = express();
+// mongodb+srv://rupesh:Emaily@986@cluster0.ivrbk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
