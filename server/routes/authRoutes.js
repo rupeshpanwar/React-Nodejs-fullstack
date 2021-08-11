@@ -16,7 +16,7 @@ module.exports = app => {
     res.send(req.user)
   })
 
-  //cookie return route handler
+  //cookie return route handler -
   app.get('/api/current_user',(req,res) => {
     res.send(req.user)
     // res.send(req.session)
