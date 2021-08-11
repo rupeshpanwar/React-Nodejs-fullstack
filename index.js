@@ -6,7 +6,7 @@ const keys = require('./config/keys')
 require('./models/User')
 require('./services/passport');
 
-
+//connect to db
 mongoose.connect(keys.mongoURI,{
     useNewUrlParser: true,
     useCreateIndex: true,
