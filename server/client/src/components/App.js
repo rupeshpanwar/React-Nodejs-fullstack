@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter,Route} from 'react-router-dom'
 
 
@@ -10,7 +10,12 @@ const SurveyNew = () => <h2>SurveyNew</h2>
 
 const Landing = () => <h2>Landing</h2>
 
-function App() {
+class App extends Component {
+    componentDidMount() {
+
+    }
+    
+    render() {
     return (
         <div className="container">
             <BrowserRouter>
@@ -23,6 +28,7 @@ function App() {
             </BrowserRouter>
         </div>
     )
+    }
 }
 
 export default App
