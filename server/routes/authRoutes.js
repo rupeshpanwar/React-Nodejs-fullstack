@@ -18,7 +18,7 @@ module.exports = app => {
   // logout user - killing the cookie
   app.get('/api/logout',(req,res) => {
     req.logout()
-    res.send(req.user)
+    res.redirect('/')
   })
 
   //cookie return route handler -
