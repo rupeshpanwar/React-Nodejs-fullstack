@@ -26,5 +26,6 @@ module.exports = app => {
             survey,
             surveyTemplate(survey),
         )
+        mailer.send()
     })
 }
